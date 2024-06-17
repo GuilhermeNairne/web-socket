@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+    <script src="websocket-client.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      input[type="text"] {
+        width: 300px;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        width: 300px;
+      }
+
+      ul li {
+        background-color: #fff;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>WebSocket Client</h1>
+      <div class="input-group">
+        <input type="text" name="username" id="username" placeholder="Informe seu Usuário">
+        <input type="text" id="messageInput" placeholder="Digite sua mensagem aqui">
+        <button id="sendButton">Enviar Mensagem</button>
+      </div>
+      <ul id="messages"></ul>
+    </div>
+  </body>
+</html>
